@@ -25,9 +25,8 @@ func main() {
 	//l.InsertBefore("back2",element)
 	fmt.Println(l.Front().Value)
 	fmt.Println(l.Back().Value)
+
 	for i:=l.Front();i!=nil;i=i.Next(){
 		fmt.Print(" ",i.Value)
 	}
-	
-
 }
