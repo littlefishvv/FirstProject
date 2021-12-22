@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
+
+
 	a,b:=1,2
 	fmt.Println(math.IsNaN(3.4))      //false
 	fmt.Println(math.Ceil(1.000001))  //2

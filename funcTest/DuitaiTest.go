@@ -1,17 +1,17 @@
 package main
 
-type AnimalAction interface{
+type Animaler interface{
 	run()
 	eat()
 }
 type Animal struct{
 	//如果想调用子类的方法，就需要再集合一个action 比如在模板方法模式里就需要调用子类的方法。
-	//action
-	AnimalAction
+	//	AnimalAction
+
 	name string
 	age int
 }
-func  (*Animal) eat(){
+func (*Animal)  eat(){
 	println("默认实现")
 }
 func  (*Animal) run(){
@@ -40,10 +40,10 @@ func (*Dog) eat(){
 }*/
 func testDuitai(){
 	//一个完美诠释多态的例子。
-	//因为cat和dog匿名组合了animal，而animal实现了animalAction的接口
+	//因为cat和dog匿名组合了animal，而animal实现了animaler的接口
 	//代表了全部都是animalAction类型的 并且因为匿名组合了animal 所以animal实现的接口方法，就是dog和cat
 	//的默认方法。dog和cat后面实现的都是重写的方法。注意必须是匿名组合。
-	var animal AnimalAction
+	var animal Animaler
 	animal=&Cat{&Animal{name: "cat1"}}
 	animal.eat()
 	animal.run()
